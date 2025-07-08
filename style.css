@@ -7,10 +7,24 @@ body {
   margin: 5% 1%;
   background-color: #f4f6f8;
 }
+.img-and-head
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+img
+  {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+  }
 header {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+  width: calc(100% - 600px);
 }
 h1 {
   font-size: 2.5rem;
@@ -30,7 +44,8 @@ h1 {
   padding: 20px;
   border-radius: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
+  cursor: pointer;
+  width: 300px;
 
   @media screen and (max-width:992px) {
     justify-content: center;
@@ -50,6 +65,20 @@ p {
   color: #777;
   font-size: 15.2px;
   margin: 15px 0;
+}
+.deadline
+{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+
+  span
+  {
+    font-weight: 500;
+    padding: 0.5px 0;
+    border-bottom: 1px solid black;
+  }
 }
 a {
   text-decoration: none;
