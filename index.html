@@ -21,12 +21,13 @@
           <span>07-16</span>
         </div>
         <div class="card-footer">
-          <a
-            href="https://drive.google.com/drive/folders/1RYi0SFS5PTyxAatq_n1bnWXR4AUadSNh"
-            target="_blank"
-            >View Lecture</a
+          <button
+            class="view-lecture-btn"
+            data-video="https://drive.google.com/file/d/1a9drXJl7gwPxRwjq-SrnDzQ10cv3l9rt/preview"
           >
-          <button class="toggle-form-btn">⬆️ Submit Task</button>
+            View Lecture
+          </button>
+          <button class="toggle-form-btn">⬇️ Submit Task</button>
         </div>
         <form
           action="https://docs.google.com/forms/d/e/1FAIpQLScGsVI1I2N4y_rO9SOcQGcu8Ze_yyszXTSNf-T0vjsupEtKqw/formResponse"
@@ -53,12 +54,14 @@
           <span>07-16</span>
         </div>
         <div class="card-footer">
-          <a
-            href="https://drive.google.com/drive/folders/1c7x4nbyKObByBEQvWV7PGgEl7LpjQbnC"
-            target="_blank"
-            >View Lecture</a
+          <button
+          class="view-lecture-btn"
+            onclick="window.open('https://drive.google.com/drive/folders/1c7x4nbyKObByBEQvWV7PGgEl7LpjQbnC', '_blank')"
           >
-          <button class="toggle-form-btn">⬆️ Submit Task</button>
+            View Lecture
+          </button>
+
+          <button class="toggle-form-btn">⬇️ Submit Task</button>
         </div>
         <form
           action="https://docs.google.com/forms/d/e/1FAIpQLScGsVI1I2N4y_rO9SOcQGcu8Ze_yyszXTSNf-T0vjsupEtKqw/formResponse"
@@ -76,6 +79,18 @@
           />
           <button type="submit">✅ Submit Task</button>
         </form>
+      </div>
+    </section>
+    <section id="video-section" class="video-section hidden">
+      <h2>Lecture Video</h2>
+      <div class="video-container">
+        <iframe
+          id="lecture-video"
+          src=""
+          allow="autoplay"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
       </div>
     </section>
 

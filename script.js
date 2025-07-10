@@ -12,20 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
   toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     const isDark = document.body.classList.contains("dark");
-
-    // حفظ الوضع في localStorage
     localStorage.setItem("mode", isDark ? "dark" : "light");
-
-    // تغيير نص الزر
-    toggleBtn.textContent = isDark
-      ? "☀️ Light Mode"
-      : "🌙 Dark Mode";
+    toggleBtn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
   });
 
-  // 📩 تشغيل فورم التسليم
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach((card) => {
+  // 📩 تشغيل فورم التسليم داخل كل كارت
+  document.querySelectorAll(".card").forEach((card) => {
     const toggleFormBtn = card.querySelector(".toggle-form-btn");
     const form = card.querySelector(".task-form");
     const lectureTitle = card.querySelector("h3");
@@ -35,7 +27,27 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleFormBtn.addEventListener("click", () => {
         form.classList.toggle("hidden");
         lectureInput.value = lectureTitle.textContent.trim();
+
+        // تحديث شكل الزر حسب الحالة
+        toggleFormBtn.textContent = form.classList.contains("hidden")
+          ? "⬇️ Submit Task"
+          : "⬆️ Close";
       });
     }
+  });
+
+  // 📺 تشغيل عرض الفيديو عند الضغط على View Lecture
+  document.querySelectorAll(".view-lecture-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const videoUrl = this.dataset.video;
+      const videoSection = document.getElementById("video-section");
+      const iframe = document.getElementById("lecture-video");
+
+      if (videoUrl && iframe && videoSection) {
+        iframe.src = videoUrl;
+        videoSection.classList.remove("hidden");
+        videoSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   });
 });
