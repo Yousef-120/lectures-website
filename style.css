@@ -2,20 +2,46 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-  margin: 5% 1%;
+  margin: 1% 1%;
   background-color: #f4f6f8;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 header {
   display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
+
 h1 {
   font-size: 2.5rem;
   color: #333;
 }
+
+#toggleMode {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+#toggleMode:hover {
+  background-color: #0056b3;
+}
+
 .cards {
   display: flex;
   gap: 20px;
@@ -24,55 +50,159 @@ h1 {
     justify-content: center;
   }
 }
+
 .card {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   padding: 20px;
   border-radius: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  width: 300px;
+  width: 350px;
 
   @media screen and (max-width:992px) {
-    justify-content: center;
+    width: calc(100% - 20px);
   }
 }
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 h3 {
   color: #333;
   font-size: 21px;
   margin-top: 17px;
   margin-bottom: 10px;
 }
+
 p {
   color: #777;
   font-size: 15.2px;
   margin: 15px 0;
 }
-.deadline
-{
+
+.deadline {
   display: flex;
   gap: 10px;
   align-items: center;
   margin-bottom: 15px;
-
-  span
-  {
-    font-weight: 500;
-    padding: 0.5px 0;
-    border-bottom: 1px solid black;
-  }
 }
-a {
+
+.deadline span {
+  font-weight: 500;
+  padding: 0.5px 0;
+  border-bottom: 1px solid black;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-footer a {
   text-decoration: none;
   color: white;
   font-weight: 700;
   background-color: #007bff;
   padding: 10px 15px;
   border-radius: 6px;
-  display: block;
-  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+.card-footer a:hover {
+  background-color: #0056b3;
+}
+
+.card-footer .toggle-form-btn {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.card-footer .toggle-form-btn:hover {
+  background-color: #e0a800;
+}
+
+.task-form {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-form label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.task-form input {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #222;
+}
+
+.task-form button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.task-form button:hover {
+  background-color: #218838;
+}
+
+.hidden {
+  display: none;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+body.dark header {
+  background-color: #1e1e1e;
+}
+body.dark h1,
+body.dark h3,
+body.dark .deadline strong {
+  color: #fff;
+}
+body.dark p {
+  color: #ccc;
+}
+body.dark .card {
+  background-color: #1e1e1e;
+}
+body.dark .card-footer a {
+  background-color: #0d6efd;
+}
+body.dark .card-footer a:hover {
+  background-color: #0b5ed7;
+}
+body.dark .toggle-form-btn {
+  background-color: #ffca2c;
+  color: #000;
+}
+body.dark .task-form input {
+  background-color: #2a2a2a;
+  color: #eee;
+  border: 1px solid #444;
+}
+body.dark .task-form {
+  border-top: 1px dashed #555;
 }

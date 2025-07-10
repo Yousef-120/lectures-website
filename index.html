@@ -9,6 +9,7 @@
   <body>
     <header>
       <h1>Course Lectures</h1>
+      <button id="toggleMode">🌙 Dark Mode</button>
     </header>
 
     <section class="cards">
@@ -19,25 +20,65 @@
           <strong>Deadline :</strong>
           <span>07-16</span>
         </div>
-        <a
-          href="https://drive.google.com/drive/folders/1RYi0SFS5PTyxAatq_n1bnWXR4AUadSNh"
+        <div class="card-footer">
+          <a
+            href="https://drive.google.com/drive/folders/1RYi0SFS5PTyxAatq_n1bnWXR4AUadSNh"
+            target="_blank"
+            >View Lecture</a
+          >
+          <button class="toggle-form-btn">⬆️ Submit Task</button>
+        </div>
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLScGsVI1I2N4y_rO9SOcQGcu8Ze_yyszXTSNf-T0vjsupEtKqw/formResponse"
+          method="POST"
           target="_blank"
-          >View Lecture</a
+          class="task-form hidden"
         >
+          <input type="hidden" name="entry.548921101" class="lecture-input" />
+          <label>🔗 Task Drive Link</label>
+          <input
+            type="url"
+            name="entry.178636085"
+            placeholder="https://drive.google.com/..."
+            required
+          />
+          <button type="submit">✅ Submit Task</button>
+        </form>
       </div>
       <div class="card">
         <h3>Lecture 2: Html 1</h3>
-        <p>Hyper Text Mark Up Language</p>
+        <p>Basics of the course and overview of topics.</p>
         <div class="deadline">
           <strong>Deadline :</strong>
           <span>07-16</span>
         </div>
-        <a
-          href="https://drive.google.com/drive/folders/1c7x4nbyKObByBEQvWV7PGgEl7LpjQbnC"
+        <div class="card-footer">
+          <a
+            href="https://drive.google.com/drive/folders/1c7x4nbyKObByBEQvWV7PGgEl7LpjQbnC"
+            target="_blank"
+            >View Lecture</a
+          >
+          <button class="toggle-form-btn">⬆️ Submit Task</button>
+        </div>
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLScGsVI1I2N4y_rO9SOcQGcu8Ze_yyszXTSNf-T0vjsupEtKqw/formResponse"
+          method="POST"
           target="_blank"
-          >View Lecture</a
+          class="task-form hidden"
         >
+          <input type="hidden" name="entry.548921101" class="lecture-input" />
+          <label>🔗 Task Drive Link</label>
+          <input
+            type="url"
+            name="entry.178636085"
+            placeholder="https://drive.google.com/..."
+            required
+          />
+          <button type="submit">✅ Submit Task</button>
+        </form>
       </div>
     </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
