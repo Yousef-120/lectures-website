@@ -38,6 +38,7 @@ h1 {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
+
 #toggleMode:hover {
   background-color: #0056b3;
 }
@@ -92,7 +93,7 @@ p {
 .deadline span {
   font-weight: 500;
   padding: 0.5px 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000;
 }
 
 .card-footer {
@@ -114,6 +115,7 @@ p {
   outline: none;
   cursor: pointer;
 }
+
 .card-footer .view-lecture-btn:hover {
   background-color: #0056b3;
 }
@@ -126,10 +128,13 @@ p {
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .card-footer .toggle-form-btn:hover {
   background-color: #e0a800;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .task-form {
@@ -165,6 +170,7 @@ p {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .task-form button:hover {
   background-color: #218838;
 }
@@ -173,65 +179,57 @@ p {
   display: none;
 }
 
+/* 🌙 الوضع الليلي */
 body.dark {
   background-color: #121212;
   color: #e0e0e0;
 }
+
 body.dark header {
   background-color: #1e1e1e;
 }
+
 body.dark h1,
 body.dark h3,
 body.dark .deadline strong {
   color: #fff;
 }
+
 body.dark p {
   color: #ccc;
 }
+
 body.dark .card {
   background-color: #1e1e1e;
 }
-body.dark .card-footer a {
+
+body.dark .card-footer .view-lecture-btn {
   background-color: #0d6efd;
 }
-body.dark .card-footer a:hover {
+
+body.dark .card-footer .view-lecture-btn:hover {
   background-color: #0b5ed7;
 }
-body.dark .toggle-form-btn {
+
+body.dark .card-footer .toggle-form-btn {
   background-color: #ffca2c;
   color: #000;
 }
+
+body.dark .card-footer .toggle-form-btn:hover {
+  background-color: #e0b000;
+}
+
 body.dark .task-form input {
   background-color: #2a2a2a;
   color: #eee;
   border: 1px solid #444;
 }
+
 body.dark .task-form {
   border-top: 1px dashed #555;
 }
-.video-section {
-  margin-top: 80px;
-  text-align: center;
-}
-.video-section h2 {
-  margin-bottom: 20px;
-}
-.video-container {
-  position: relative;
-  width: 70%; /* 👈 العرض 70% */
-  padding-bottom: 39.375%; /* 👈 نسبة 16:9 بالنسبة لـ 70% (يعني 70 * 0.5625) */
-  height: 0;
-  margin: 0 auto; /* 👈 توسيط */
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+body.dark .deadline span {
+  border-bottom: 1px solid #bbb;
 }
